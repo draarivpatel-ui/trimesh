@@ -40,14 +40,6 @@ class EncodingTest(g.unittest.TestCase):
         data = data.transpose(perm)
         self._test_dense(encoding, data)
 
-    def _test_reshape(self, encoding, data, shape):
-        encoding = encoding.reshape(shape)
-        data = data.reshape(shape)
-        self._test_dense(encoding, data)
-
-    def _test_flat(self, encoding, data):
-        self._test_dense(encoding.flat, data.reshape((-1,)))
-
     def _test_flipped(self, encoding, data, axes):
         if hasattr(axes, "__iter__"):
             for a in axes:
