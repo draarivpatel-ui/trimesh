@@ -428,10 +428,6 @@ class SceneViewer(pyglet.window.Window):
         gl.glClearColor(*background)
 
     @staticmethod
-    def _gl_unset_background():
-        gl.glClearColor(*[0, 0, 0, 0])
-
-    @staticmethod
     def _gl_enable_depth(camera):
         """
         Enable depth test in OpenGL using distances

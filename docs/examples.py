@@ -18,31 +18,6 @@ log.setLevel(logging.DEBUG)
 pwd = os.path.abspath(os.path.expanduser(os.path.dirname(__file__)))
 
 
-def extract_docstring(loaded):
-    """
-    Given a loaded JSON `ipynb` notebook extract
-    the docstring from the first cell and error
-    if the first cell doesn't have a docstring.
-
-    Parameters
-    ------------
-    loaded : dict
-      Loaded ipynb format.
-
-    Returns
-    ----------
-    doc : str
-      Cleaned up docstring.
-    """
-
-    source = loaded["cells"][0]["source"]
-
-    assert source[0].strip() == '"""'
-    assert source[-1].strip() == '"""'
-
-    return " ".join(i.strip() for i in source[1:-1])
-
-
 base = """
 {title} </{file_name}.html>
 """
