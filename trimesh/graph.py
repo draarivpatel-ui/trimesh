@@ -444,8 +444,6 @@ def connected_components(
         components = grouping.group(labels[contained], min_len=min_len)
         return [index[c] for c in components]
 
-        return components
-
     # check input edges
     edges = np.asanyarray(edges, dtype=np.int64)
     # if no nodes were specified just use unique

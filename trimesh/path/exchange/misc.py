@@ -79,7 +79,6 @@ def lines_to_path(lines: ArrayLike, index: NDArray[np.int64] | None = None) -> d
         return edges_to_path(edges=inverse.reshape((-1, 2)), vertices=lines[unique])
     else:
         raise ValueError("Lines must be (n,(2|3)) or (n,2,(2|3))")
-    return result
 
 
 def polygon_to_path(polygon):
